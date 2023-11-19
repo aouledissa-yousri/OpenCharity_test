@@ -45,11 +45,11 @@ class User:
 
     
     def update(self, username: str = None, profilePic: str = None, walletAddress: str = None):
-        if username is not None:
+        if username != self.getUsername():
             self.__username = username
-        if profilePic is not None:
+        if profilePic != self.getProfilePic():
             self.__profilePic = profilePic
-        if walletAddress is not None: 
+        if walletAddress != self.getWalletAddress(): 
             self.__walletAddress = walletAddress
     
 
