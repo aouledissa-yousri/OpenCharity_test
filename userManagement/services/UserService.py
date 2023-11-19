@@ -24,8 +24,7 @@ class UserService:
         user = User(userData["walletAddress"], userData["username"], userData["profilePic"])
         user.update(username=data["username"], profilePic=data["profilePic"], walletAddress=data["walletAddress"])
 
-        UserIpfsGatewayController.deleteUserIpfsRecord(user.getWalletAddress())
-        UserIpfsGatewayController.saveUserIpfsRecord(user.getWalletAddress(), IpfsHelper.uploadData(user.getData())["IpfsHash"])
+        UserIpfsGatewayController.updateUserIpfsRecord(user.getWalletAddress(), IpfsHelper.uploadData(user.getData())["IpfsHash"])
 
         return user.getData()
 

@@ -9,6 +9,10 @@ class UserIpfsGatewayController:
     @staticmethod
     def deleteUserIpfsRecord(walletAddress: str):
         return UserIpfsGatewayService.deleteUserIpfsRecord(walletAddress)
+    
+    @staticmethod 
+    def updateUserIpfsRecord(walletAddress: str, cid: str):
+        return UserIpfsGatewayService.updateUserIpfsRecord(walletAddress, cid)
 
     @staticmethod
     def getUserIpfsData(walletAddress: str):
